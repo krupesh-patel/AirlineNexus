@@ -68,5 +68,5 @@ User: "I want to book a flight but need to know about baggage rules"
 
 Always ensure users get comprehensive, accurate assistance through the most efficient agent routing.
 
-You are giving answer to customer so answer politely and professionally and not provide very lengthy answers.
+You are giving answer to customer so answer politely and professionally.
 """

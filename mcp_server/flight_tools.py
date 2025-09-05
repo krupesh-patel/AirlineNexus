@@ -15,7 +15,7 @@ from mcp.server.fastmcp import FastMCP
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Configure logging
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger("flight-mcp-server")
 
 # Create server instance
@@ -32,26 +32,13 @@ class FlightMCPTools:
     def __init__(self):
         self.db_manager = db_manager
 
-    @mcp.tool()
-    def search_flights(self,
-                       departure_airport: Optional[str] = None,
-                       arrival_airport: Optional[str] = None,
-                       departure_date: Optional[str] = None,
-                       passengers: int = 1,
-                       class_preference: str = "economy") -> Dict[str, Any]:
-        """
-        Search for available flights based on criteria
-        
-        Args:
-            departure_airport: Airport code (e.g., 'JFK', 'LAX')
-            arrival_airport: Airport code (e.g., 'JFK', 'LAX') 
-            departure_date: Date in YYYY-MM-DD format
-            passengers: Number of passengers
-            class_preference: 'economy', 'business', or 'first'
-            
-        Returns:
-            Dict with flight search results
-        """
+    def search_flights_impl(self,
+                            departure_airport: Optional[str] = None,
+                            arrival_airport: Optional[str] = None,
+                            departure_date: Optional[str] = None,
+                            passengers: int = 1,
+                            class_preference: str = "economy") -> Dict[str, Any]:
+        """Search for available flights based on criteria"""
         try:
             # Generate mock flight data based on search criteria
             flights = self._generate_flight_results(
@@ -79,17 +66,8 @@ class FlightMCPTools:
                 'flights': []
             }
 
-    @mcp.tool()
-    def get_flight_details(self, flight_number: str) -> Dict[str, Any]:
-        """
-        Get detailed information about a specific flight
-        
-        Args:
-            flight_number: Flight number (e.g., 'AN101')
-            
-        Returns:
-            Dict with flight details
-        """
+    def get_flight_details_impl(self, flight_number: str) -> Dict[str, Any]:
+        """Get detailed information about a specific flight"""
         try:
             # Generate flight details based on flight number
             flight_details = self._generate_flight_details(flight_number)
@@ -112,32 +90,19 @@ class FlightMCPTools:
                 'error': str(e)
             }
 
-    @mcp.tool()
-    def create_booking(self,
-                       flight_number: str,
-                       passenger_name: str,
-                       passenger_email: str,
-                       phone_number: Optional[str] = None,
-                       special_requests: Optional[str] = None) -> Dict[str, Any]:
-        """
-        Create a flight booking
-        
-        Args:
-            flight_number: Flight number to book
-            passenger_name: Primary passenger name
-            passenger_email: Passenger email
-            phone_number: Contact phone number
-            special_requests: Any special requests
-            
-        Returns:
-            Dict with booking confirmation
-        """
+    def create_booking_impl(self,
+                            flight_number: str,
+                            passenger_name: str,
+                            passenger_email: str,
+                            phone_number: Optional[str] = None,
+                            special_requests: Optional[str] = None) -> Dict[str, Any]:
+        """Create a flight booking"""
         try:
             # Generate booking reference
             booking_reference = self._generate_booking_reference()
 
             # Get flight details
-            flight_result = self.get_flight_details(flight_number)
+            flight_result = self.get_flight_details_impl(flight_number)
             if not flight_result['success']:
                 return flight_result
 
@@ -173,17 +138,8 @@ class FlightMCPTools:
                 'error': str(e)
             }
 
-    @mcp.tool()
-    def get_booking_status(self, booking_reference: str) -> Dict[str, Any]:
-        """
-        Get booking status and details
-        
-        Args:
-            booking_reference: Booking reference code
-            
-        Returns:
-            Dict with booking status
-        """
+    def get_booking_status_impl(self, booking_reference: str) -> Dict[str, Any]:
+        """Get booking status and details"""
         try:
             # Retrieve booking (in production, would query database)
             booking = self._retrieve_booking(booking_reference)
@@ -206,17 +162,8 @@ class FlightMCPTools:
                 'error': str(e)
             }
 
-    @mcp.tool()
-    def cancel_booking(self, booking_reference: str) -> Dict[str, Any]:
-        """
-        Cancel a booking
-        
-        Args:
-            booking_reference: Booking reference to cancel
-            
-        Returns:
-            Dict with cancellation status
-        """
+    def cancel_booking_impl(self, booking_reference: str) -> Dict[str, Any]:
+        """Cancel a booking"""
         try:
             # Retrieve booking first
             booking = self._retrieve_booking(booking_reference)
@@ -248,22 +195,14 @@ class FlightMCPTools:
             }
 
     def _generate_flight_results(self, departure: str, arrival: str, date: str, passengers: int, class_pref: str) -> \
-    List[Dict[str, Any]]:
+            List[Dict[str, Any]]:
         """Generate mock flight search results"""
         flights = []
 
-        # Sample airlines and flight numbers
-        airlines = [
-            {'code': 'AN', 'name': 'AirlineNexus'},
-            {'code': 'AA', 'name': 'American Airlines'},
-            {'code': 'UA', 'name': 'United Airlines'},
-            {'code': 'DL', 'name': 'Delta Air Lines'}
-        ]
-
-        # Generate 3-5 flight options
-        for i in range(3, 6):
-            airline = airlines[i % len(airlines)]
-            flight_number = f"{airline['code']}{100 + i}"
+        # Generate 2 flight options
+        for i in range(3, 5):
+            airline = "AirlineNexus"
+            flight_number = "AN" + str(100 + i)
 
             # Calculate departure and arrival times
             base_time = datetime.now() + timedelta(days=1)
@@ -279,7 +218,7 @@ class FlightMCPTools:
 
             flight = {
                 'flight_number': flight_number,
-                'airline': airline['name'],
+                'airline': "AirlineNexus",
                 'departure_airport': departure or 'JFK',
                 'arrival_airport': arrival or 'LAX',
                 'departure_time': departure_time.isoformat(),
@@ -303,14 +242,7 @@ class FlightMCPTools:
         # Extract airline code from flight number
         airline_code = flight_number[:2]
 
-        airlines = {
-            'AN': 'AirlineNexus',
-            'AA': 'American Airlines',
-            'UA': 'United Airlines',
-            'DL': 'Delta Air Lines'
-        }
-
-        airline_name = airlines.get(airline_code, 'Unknown Airline')
+        airline_name = "AirlineNexus"
 
         # Generate departure/arrival times
         departure_time = datetime.now() + timedelta(days=1, hours=8)
@@ -366,6 +298,101 @@ class FlightMCPTools:
                 'flight_details': self._generate_flight_details('AN101')
             }
         return None
+
+
+# Initialize the flight tools instance
+flight_tools = FlightMCPTools()
+
+
+# MCP Tool Functions
+@mcp.tool()
+def search_flights(departure_airport: Optional[str] = None,
+                   arrival_airport: Optional[str] = None,
+                   departure_date: Optional[str] = None,
+                   passengers: int = 1,
+                   class_preference: str = "economy") -> Dict[str, Any]:
+    """
+    Search for available flights based on criteria
+    
+    Args:
+        departure_airport: Airport code (e.g., 'JFK', 'LAX')
+        arrival_airport: Airport code (e.g., 'JFK', 'LAX') 
+        departure_date: Date in YYYY-MM-DD format
+        passengers: Number of passengers
+        class_preference: 'economy', 'business', or 'first'
+        
+    Returns:
+        Dict with flight search results
+    """
+    return flight_tools.search_flights_impl(
+        departure_airport, arrival_airport, departure_date, passengers, class_preference
+    )
+
+
+@mcp.tool()
+def get_flight_details(flight_number: str) -> Dict[str, Any]:
+    """
+    Get detailed information about a specific flight
+    
+    Args:
+        flight_number: Flight number (e.g., 'AN101')
+        
+    Returns:
+        Dict with flight details
+    """
+    return flight_tools.get_flight_details_impl(flight_number)
+
+
+@mcp.tool()
+def create_booking(flight_number: str,
+                   passenger_name: str,
+                   passenger_email: str,
+                   phone_number: Optional[str] = None,
+                   special_requests: Optional[str] = None) -> Dict[str, Any]:
+    """
+    Create a flight booking
+    
+    Args:
+        flight_number: Flight number to book
+        passenger_name: Primary passenger name
+        passenger_email: Passenger email
+        phone_number: Contact phone number
+        special_requests: Any special requests
+        
+    Returns:
+        Dict with booking confirmation
+    """
+    return flight_tools.create_booking_impl(
+        flight_number, passenger_name, passenger_email, phone_number, special_requests
+    )
+
+
+@mcp.tool()
+def get_booking_status(booking_reference: str) -> Dict[str, Any]:
+    """
+    Get booking status and details
+    
+    Args:
+        booking_reference: Booking reference code
+        
+    Returns:
+        Dict with booking status
+    """
+    return flight_tools.get_booking_status_impl(booking_reference)
+
+
+@mcp.tool()
+def cancel_booking(booking_reference: str) -> Dict[str, Any]:
+    """
+    Cancel a booking
+    
+    Args:
+        booking_reference: Booking reference to cancel
+        
+    Returns:
+        Dict with cancellation status
+    """
+    return flight_tools.cancel_booking_impl(booking_reference)
 
 
 # Global instance

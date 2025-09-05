@@ -7,6 +7,9 @@ from strands import Agent, tool
 from strands.tools.mcp.mcp_client import MCPClient
 from prompts.flight_prompt import FLIGHT_SYSTEM_PROMPT
 from model.moonshot import get_model
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 @tool
@@ -29,16 +32,16 @@ def flight_agent(query: str) -> str:
             # Get the tools from the MCP server
             tools = streamable_http_mcp_client.list_tools_sync()
 
-        f_agent = Agent(
-            model=get_model(),
-            system_prompt=FLIGHT_SYSTEM_PROMPT,
-            tools=[] + tools,
-        )
-        agent_response = f_agent(formatted_query)
-        text_response = str(agent_response)
+            f_agent = Agent(
+                model=get_model(),
+                system_prompt=FLIGHT_SYSTEM_PROMPT,
+                tools=[] + tools,
+            )
+            agent_response = f_agent(formatted_query)
+            text_response = str(agent_response)
 
-        if len(text_response) > 0:
-            return text_response
+            if len(text_response) > 0:
+                return text_response
 
         return "I apologize, but I couldn't properly analyze your flight related question. Could you please rephrase or provide more context?"
     except Exception as e:

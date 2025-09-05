@@ -36,6 +36,10 @@ Our system employs a sophisticated multi-agent architecture where different AI s
 | 🖥️ **Modern UI** | Beautiful Streamlit web interface | Streamlit + Custom CSS |
 | ⚡ **Real-time Processing** | Live status updates and processing indicators | WebSocket + Async Processing |
 
+### Architecture
+
+![Architecture Diagram](./docs/arch.png)
+
 ### 🧠 Agent Specifications
 
 <details>

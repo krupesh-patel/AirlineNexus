@@ -12,7 +12,7 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-[🚀 Quick Start](#-quick-start) • [📖 Documentation](#-documentation) • [🏗️ Architecture](#️-architecture) • [🤝 Contributing](#-contributing)
+[🚀 Quick Start](#-quick-start) • [📖 Documentation](#-documentation) • [🏗️ Architecture](#-architecture) • [🤝 Contributing](#-contributing)
 
 ---
 
@@ -36,7 +36,7 @@ Our system employs a sophisticated multi-agent architecture where different AI s
 | 🖥️ **Modern UI** | Beautiful Streamlit web interface | Streamlit + Custom CSS |
 | ⚡ **Real-time Processing** | Live status updates and processing indicators | WebSocket + Async Processing |
 
-### Architecture
+## 🏗️ Architecture
 
 ![Architecture Diagram](./docs/arch.png)
 

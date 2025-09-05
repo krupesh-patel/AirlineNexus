@@ -399,6 +399,5 @@ Use the [GitHub issue tracker](https://github.com/krupesh-patel/AirlineNexus/iss
 [![GitHub stars](https://img.shields.io/github/stars/krupesh-patel/AirlineNexus?style=social)](https://github.com/krupesh-patel/AirlineNexus/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/krupesh-patel/AirlineNexus?style=social)](https://github.com/krupesh-patel/AirlineNexus/network)
 
-[⭐ Star this project](https://github.com/krupesh-patel/AirlineNexus) • [🍴 Fork it](https://github.com/krupesh-patel/AirlineNexus/fork) • [📢 Share it](https://twitter.com/intent/tweet?text=Check%20out%20AirlineNexus%20-%20Multi-Agent%20AI%20Airline%20Assistant!&url=https://github.com/krupesh-patel/AirlineNexus)
-
+[⭐ Star this project](https://github.com/krupesh-patel/AirlineNexus) • [🍴 Fork it](https://github.com/krupesh-patel/AirlineNexus/fork)
 </div>

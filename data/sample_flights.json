@@ -1,0 +1,98 @@
+[
+  {
+    "flight_number": "AN101",
+    "airline": "AirlineNexus",
+    "departure_airport": "JFK",
+    "arrival_airport": "LAX", 
+    "departure_time": "2025-09-05 08:00:00",
+    "arrival_time": "2025-09-05 11:30:00",
+    "price": 299.99,
+    "available_seats": 42,
+    "aircraft_type": "Boeing 737-800",
+    "status": "SCHEDULED"
+  },
+  {
+    "flight_number": "AN102",
+    "airline": "AirlineNexus",
+    "departure_airport": "LAX",
+    "arrival_airport": "JFK",
+    "departure_time": "2025-09-05 14:00:00", 
+    "arrival_time": "2025-09-05 22:15:00",
+    "price": 319.99,
+    "available_seats": 38,
+    "aircraft_type": "Boeing 737-800",
+    "status": "SCHEDULED"
+  },
+  {
+    "flight_number": "AN201",
+    "airline": "AirlineNexus", 
+    "departure_airport": "ORD",
+    "arrival_airport": "MIA",
+    "departure_time": "2025-09-06 09:30:00",
+    "arrival_time": "2025-09-06 13:45:00",
+    "price": 249.99,
+    "available_seats": 56,
+    "aircraft_type": "Airbus A320",
+    "status": "SCHEDULED"
+  },
+  {
+    "flight_number": "AN202",
+    "airline": "AirlineNexus",
+    "departure_airport": "MIA", 
+    "arrival_airport": "ORD",
+    "departure_time": "2025-09-06 16:00:00",
+    "arrival_time": "2025-09-06 19:20:00",
+    "price": 269.99,
+    "available_seats": 23,
+    "aircraft_type": "Airbus A320",
+    "status": "SCHEDULED"
+  },
+  {
+    "flight_number": "AN301",
+    "airline": "AirlineNexus",
+    "departure_airport": "SFO",
+    "arrival_airport": "SEA",
+    "departure_time": "2025-09-07 12:00:00",
+    "arrival_time": "2025-09-07 14:30:00", 
+    "price": 189.99,
+    "available_seats": 67,
+    "aircraft_type": "Boeing 737-900",
+    "status": "SCHEDULED"
+  },
+  {
+    "flight_number": "AN302",
+    "airline": "AirlineNexus",
+    "departure_airport": "SEA",
+    "arrival_airport": "SFO",
+    "departure_time": "2025-09-07 17:00:00",
+    "arrival_time": "2025-09-07 19:25:00",
+    "price": 199.99,
+    "available_seats": 45,
+    "aircraft_type": "Boeing 737-900", 
+    "status": "SCHEDULED"
+  },
+  {
+    "flight_number": "AN401",
+    "airline": "AirlineNexus",
+    "departure_airport": "DFW",
+    "arrival_airport": "DEN",
+    "departure_time": "2025-09-08 07:15:00",
+    "arrival_time": "2025-09-08 08:45:00",
+    "price": 159.99,
+    "available_seats": 89,
+    "aircraft_type": "Embraer E175",
+    "status": "SCHEDULED"
+  },
+  {
+    "flight_number": "AN501",
+    "airline": "AirlineNexus", 
+    "departure_airport": "BOS",
+    "arrival_airport": "ATL",
+    "departure_time": "2025-09-09 10:30:00",
+    "arrival_time": "2025-09-09 13:15:00",
+    "price": 229.99,
+    "available_seats": 12,
+    "aircraft_type": "Airbus A321",
+    "status": "SCHEDULED"
+  }
+]

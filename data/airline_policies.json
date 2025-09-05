@@ -1,0 +1,62 @@
+[
+  {
+    "category": "baggage",
+    "title": "Carry-on Baggage Allowance",
+    "content": "Passengers are allowed one carry-on bag with maximum dimensions of 22\" x 14\" x 9\" (56 x 36 x 23 cm) and maximum weight of 15 lbs (7 kg). The bag must fit in the overhead compartment. One personal item such as a purse, laptop bag, or small backpack is also permitted and must fit under the seat in front of you."
+  },
+  {
+    "category": "baggage", 
+    "title": "Checked Baggage Policy",
+    "content": "First checked bag is included for all fare types except Basic Economy. Maximum weight is 50 lbs (23 kg) and maximum dimensions are 62 linear inches (157 cm). Additional bags incur fees: $35 for second bag, $150 for third bag. Overweight bags (51-70 lbs) incur $100 fee. Oversized bags (63-80 linear inches) incur $200 fee."
+  },
+  {
+    "category": "baggage",
+    "title": "Prohibited Items",
+    "content": "Prohibited items include firearms, explosives, flammable liquids over 100ml, sharp objects longer than 6cm, lithium batteries over 100Wh, and sporting goods like baseball bats. Liquids must be in containers of 100ml or less and fit in a 1-liter clear bag. Medications and baby food are exempt from liquid restrictions."
+  },
+  {
+    "category": "booking",
+    "title": "Ticket Changes and Cancellations", 
+    "content": "Basic Economy tickets are non-refundable and non-changeable. Main Cabin and above allow changes with no change fee but fare difference applies. Cancellations within 24 hours of booking receive full refund. After 24 hours, refunds depend on fare type: Basic Economy - no refund, Main Cabin - refund minus $200 fee, Premium - full refund."
+  },
+  {
+    "category": "booking",
+    "title": "Seat Selection Policy",
+    "content": "Basic Economy passengers cannot select seats in advance and are assigned at check-in. Main Cabin passengers can select standard seats for free starting 24 hours before departure. Premium seat selection (extra legroom, exit row) available for $25-75 fee depending on route length. First Class and Business Class include complimentary seat selection."
+  },
+  {
+    "category": "checkin",
+    "title": "Check-in Requirements",
+    "content": "Online check-in opens 24 hours before departure and closes 45 minutes before domestic flights, 90 minutes before international flights. Mobile boarding passes accepted at all airports. Passengers must arrive at airport 2 hours early for domestic flights, 3 hours for international. Valid government-issued photo ID required for all passengers."
+  },
+  {
+    "category": "checkin",
+    "title": "Special Assistance",
+    "content": "Passengers requiring wheelchair assistance, unaccompanied minors, or traveling with service animals must notify airline at least 48 hours in advance. Special meals available with 24-hour notice. Passengers with disabilities can board early and receive priority seating. Service animals fly free in cabin with proper documentation."
+  },
+  {
+    "category": "travel",
+    "title": "Pet Travel Policy", 
+    "content": "Small pets (cats and dogs) can travel in cabin for $125 fee each way. Pet carrier must fit under seat and pet must remain in carrier during flight. Maximum carrier dimensions: 18\" x 11\" x 11\". Larger pets must travel as cargo. Pets must be at least 8 weeks old and have health certificates. Some breeds restricted due to breathing issues."
+  },
+  {
+    "category": "travel",
+    "title": "Unaccompanied Minor Policy",
+    "content": "Children ages 5-14 traveling alone are considered unaccompanied minors and require special service for $150 fee each way. Service mandatory for ages 5-11, optional for 12-14. Children must have completed UM form and be accompanied to gate by adult. Flight restrictions apply - no connections over 2 hours, no last flight of day."
+  },
+  {
+    "category": "compensation",
+    "title": "Flight Delay Compensation",
+    "content": "For delays over 3 hours within airline control, passengers receive meal vouchers and accommodation if overnight. EU flights may qualify for compensation up to €600 depending on distance and delay length. Weather, air traffic control, and security delays are considered extraordinary circumstances with no compensation required."
+  },
+  {
+    "category": "compensation", 
+    "title": "Overbooking Policy",
+    "content": "In case of overbooking, airline first seeks volunteers in exchange for travel vouchers up to $1,000. If involuntary denied boarding occurs, compensation is 200% of one-way fare (max $675) for delays 1-2 hours domestic, 400% (max $1,350) for delays over 2 hours domestic or over 4 hours international."
+  },
+  {
+    "category": "loyalty",
+    "title": "Frequent Flyer Benefits",
+    "content": "Bronze status (25k miles): Priority boarding, bonus miles earning. Silver status (50k miles): Free checked bag, seat upgrades, priority check-in. Gold status (75k miles): Lounge access, priority rebooking, bonus miles multiplier. Platinum status (100k miles): Companion certificate, first class upgrades, dedicated phone line."
+  }
+]

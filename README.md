@@ -228,9 +228,7 @@ AirlineNexus/
 │   └── __init__.py
 └── 
 └── 📂 docs/                    # Additional documentation
-    ├── architecture_diagram.md # Detailed architecture
-    ├── api_reference.md        # API documentation
-    └── deployment.md           # Deployment guide
+    ├── architecture_interactive.html # Detailed architecture
 ```
 
 ## 🛠️ Technology Stack

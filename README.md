@@ -31,7 +31,7 @@ Our system employs a sophisticated multi-agent architecture where different AI s
 | 🤖 **Multi-Agent Architecture** | Specialized agents for different domains | Strands Agents Framework |
 | 🛫 **Flight Operations** | Complete flight search, booking, and management | MCP Server + FastAPI |
 | 📋 **Policy Intelligence** | AI-powered policy queries with vector search | TiDB Vector + Embeddings |
-| 🎧 **Smart Support** | Automated ticket creation and issue resolution | Python Tools + Email Integration |
+| 🎧 **Smart Support** | Automated ticket creation and issue resolution | Python Tools |
 | 💬 **Natural Conversations** | Seamless handoffs between specialized agents | Moonshot AI + Kiwi LLM |
 | 🖥️ **Modern UI** | Beautiful Streamlit web interface | Streamlit + Custom CSS |
 | ⚡ **Real-time Processing** | Live status updates and processing indicators | WebSocket + Async Processing |

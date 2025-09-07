@@ -300,18 +300,14 @@ AirlineNexus/
 
 - **🎨 Modern Design:** Clean, professional airline-themed UI with custom CSS
 - **💬 Real-time Chat:** Instant messaging with typing indicators and animations
-- **📊 Agent Visibility:** Live display of which agent is processing your request
 - **📈 Session Management:** Conversation history, statistics, and session persistence
 - **⚡ Quick Actions:** Pre-built example queries for common use cases
-- **📱 Responsive Design:** Works seamlessly on desktop, tablet, and mobile
 
 ### 🧠 AI Capabilities
 
 - **🎯 Intent Recognition:** Automatically routes queries to the most appropriate agent
 - **🔄 Context Awareness:** Maintains conversation context across agent handoffs
 - **📝 Multi-modal Responses:** Text, structured data, tables, and actionable insights
-- **🛡️ Error Recovery:** Graceful error handling with alternative suggestions
-- **📊 Performance Monitoring:** Real-time tracking of response times and success rates
 
 ## 🤝 Contributing
 

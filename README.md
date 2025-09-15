@@ -253,6 +253,51 @@ AirlineNexus/
 
 </div>
 
+## 🗄️ Database Schema
+
+### TiDB Vector Database Configuration
+
+**AirlineNexus** uses TiDB Serverless as the vector database for storing and searching airline policies using semantic embeddings.
+
+#### 📊 Table Structure
+
+**Table:** `airline_policies`
+
+| Column | Type | Description |
+|--------|------|-------------|
+| `id` | VARCHAR(255) | Primary key identifier |
+| `document` | TEXT | Full policy content text |
+| `meta` | JSON | Metadata containing category and title |
+| `embedding` | VECTOR(384) | 384-dimensional embedding vector |
+
+#### 🔍 Vector Index
+
+The system uses a cosine distance vector index for semantic similarity search:
+
+```sql
+CREATE VECTOR INDEX idx_embedding ON airline_policies ((VEC_COSINE_DISTANCE(embedding)));
+```
+
+**Index Specifications:**
+- **Index Type:** Vector Index with Cosine Distance
+- **Embedding Dimensions:** 384
+- **Distance Metric:** Cosine Distance
+- **Search Method:** Approximate Nearest Neighbor (ANN)
+
+#### 📝 Sample Data Structure
+
+```json
+{
+    "id": "1",
+    "document": "Passengers are allowed to carry one personal item...",
+    "meta": {
+        "category": "baggage",
+        "title": "Personal Item Policy"
+    },
+    "embedding": [0.123, -0.456, 0.789, ...] // 384 dimensions
+}
+```
+
 ## 🎯 Use Cases & Examples
 
 ### 🛫 Flight Management

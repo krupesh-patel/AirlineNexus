@@ -263,11 +263,11 @@ AirlineNexus/
 
 **Table:** `airline_policies`
 
-| Column | Type | Description |
-|--------|------|-------------|
-| `id` | VARCHAR(255) | Primary key identifier |
-| `document` | TEXT | Full policy content text |
-| `meta` | JSON | Metadata containing category and title |
+| Column | Type        | Description |
+|--------|-------------|-------------|
+| `id` | VARCHAR(36) | Primary key identifier |
+| `document` | TEXT        | Full policy content text |
+| `meta` | JSON        | Metadata containing category and title |
 | `embedding` | VECTOR(384) | 384-dimensional embedding vector |
 
 #### 🔍 Vector Index
